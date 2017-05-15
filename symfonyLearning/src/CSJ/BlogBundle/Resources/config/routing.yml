@@ -1,0 +1,38 @@
+csj_blog_homepage:
+    path:     /
+    defaults: { _controller: CSJBlogBundle:Post:index }
+
+csj_blog_postpage:
+    path:     /post/{id}
+    defaults: { _controller: CSJBlogBundle:Post:post }
+    requirements:
+        id: \d+
+
+#csj_blog_categorypage:
+ #   path:    /category
+  #  defaults: { _controller: CSJBlogBundle:Category:index }
+
+csj_blog_categorypage:
+    path:     /category/{slug}
+    defaults: { _controller: CSJBlogBundle:Category:index }
+
+csj_blog_adminpostlist:
+    path:     /admin/post/
+    defaults: { _controller: CSJBlogBundle:Admin\Post:index }
+
+csj_blog_adminpostadd:
+    path:     /admin/post/add/
+    defaults:  { _controller: CSJBlogBundle:Admin\Post:add }
+
+
+csj_blog_adminpostedit:
+    path:     /admin/post/edit/{id}
+    defaults:  { _controller: CSJBlogBundle:Admin\Post:edit }
+    requirements:
+        id: \d+
+
+csj_blog_adminpostdelete:
+    path:     /admin/post/delete/{id}
+    defaults:  { _controller: CSJBlogBundle:Admin\Post:delete }
+    requirements:
+        id: \d+

@@ -1,0 +1,47 @@
+{% extends "CSJBlogBundle::layout.html.twig" %}
+
+
+{% block content %}
+
+    <h1><font color="orange">tagadaTsouinTsouin</font></h1>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>title</th>
+            <th>date</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+        <tr>
+            <td>{{ post.title }}</td>
+            <td>{{ post.createAt.date }}</td>
+            <td><a href="{{path("csj_blog_adminpostedit", {id : post.id }) }}" class="glyphicon glyphicon-pencil"></a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+{% block stylesheets %}
+{% stylesheets 'CSJBlogBundles/Resources/Public/css/*' %}
+<link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+{% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+ {% javascripts '@CSJBlogBundle/Resources/Public/js/main.js' %}*
+
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock %}
+
+
+
+
+{# C:\wamp64\www\symfonyLearning>php bin/console fos:user:create = création nouvel user
+C:\wamp64\www\symfonyLearning>php bin/console fos:user:promote boo ROLE_ADMIN = droits utilisateurs#}

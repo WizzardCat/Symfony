@@ -1,0 +1,18 @@
+{% extends "::base.html.twig" %}
+
+    {% block body %}
+
+        {{  render(controller("CSJBlogBundle:Menu:index")) }}
+        <div class="container content">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+
+        </div>
+
+
+    {% endblock %}
